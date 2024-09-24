@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 import { Input } from "../ui/input";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../ui/button";
 
 export function SignInForm() {
@@ -13,7 +13,7 @@ export function SignInForm() {
   const [passworldField, setPasswordField] = useState('');
 
   function handleButton() {
-    router.replace('/');
+    router.replace('/home');
   };
 
   return (
