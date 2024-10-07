@@ -2,6 +2,7 @@
 
 import { user } from "@/data/user";
 import { RecommendationItem } from "./recommendation-item";
+import { RecommendationItemSkeleton } from "./recommendation-item-skeleton";
 
 export function RecommendationArea() {
   return (
@@ -9,8 +10,8 @@ export function RecommendationArea() {
       <h2 className="text-xl p-6">Quem seguir</h2>
 
       <div className="flex flex-col gap-4 p-6 pt-0">
-        <RecommendationItem user={user}/>
-        <RecommendationItem user={user}/>
+        <RecommendationItem user={user} />
+        <RecommendationItemSkeleton />
       </div>
     </div>
   )

@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { Logo } from "@/components/ui/logo";
 import { NavItem } from "@/components/nav/nav-item";
-import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 import { NavLogout } from "@/components/nav/nav-logout";
-import { NavMyProfile } from "@/components/nav/nav-myprofile";
 import { SearchInput } from "@/components/ui/search-input";
 import { TrendingArea } from "@/components/ui/trending-area";
+import { NavMyProfile } from "@/components/nav/nav-myprofile";
+import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 import { RecommendationArea } from "@/components/ui/recommendation-area";
 
 type Props = {
