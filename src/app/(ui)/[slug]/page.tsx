@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { user } from "@/data/user";
 import { Button } from "@/components/ui/button";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { ProfileFeed } from "@/components/profile/profile-feed";
 
 export default function Perfil() {

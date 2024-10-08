@@ -19,7 +19,7 @@ export function SearchInput({ defaultValue, hideOnSearch }: Props) {
   function handleSearch() {
     if (searchInput) {
       router.push('/search?q=' + encodeURIComponent(searchInput));
-    }
+    };
   };
 
   if (hideOnSearch && pathname === '/search') return null;

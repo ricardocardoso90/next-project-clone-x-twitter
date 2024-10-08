@@ -8,7 +8,12 @@ import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRetweet, faHeart as faHeartFilled } from "@fortawesome/free-solid-svg-icons";
 
-export function TweetItem({ tweet }: { tweet: Tweet }) {
+type Props = {
+  tweet: Tweet;
+  hideComments?: boolean;
+};
+
+export function TweetItem({ tweet, hideComments }: Props) {
   const [liked, setLiked] = useState(tweet.liked);
 
   function handleLiked() {
@@ -32,7 +37,7 @@ export function TweetItem({ tweet }: { tweet: Tweet }) {
           <div className="font-bold text-lg">
             <Link href={`/${tweet.user.slug}`}>{tweet.user.name}</Link>
           </div>
-          <div className="text-xs text-gray-500">@{tweet.user.slug} - {}</div>
+          <div className="text-xs text-gray-500">@{tweet.user.slug} - { }</div>
         </div>
         <div className="py-4 text-lg">{tweet.body}</div>
 
@@ -47,17 +52,20 @@ export function TweetItem({ tweet }: { tweet: Tweet }) {
         }
 
         <div className="flex mt-6 text-gray-500">
-          <div className="flex-1">
-            <Link href={`/tweet/${tweet.id}`}>
-              <div className="inline-flex items-center gap-2 cursor-pointer">
-                <FontAwesomeIcon
-                  icon={faComment}
-                  className="size-6"
-                />
-                <div className="text-lg">{tweet.commentCount}</div>
-              </div>
-            </Link>
-          </div>
+          {!hideComments &&
+            <div className="flex-1">
+              <Link href={`/tweet/${tweet.id}`}>
+                <div className="inline-flex items-center gap-2 cursor-pointer">
+                  <FontAwesomeIcon
+                    icon={faComment}
+                    className="size-6"
+                  />
+
+                  <div className="text-lg">{tweet.commentCount}</div>
+                </div>
+              </Link>
+            </div>
+          }
           <div className="flex-1">
             <div className="inline-flex items-center gap-2 cursor-pointer">
               <FontAwesomeIcon
